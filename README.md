@@ -11,7 +11,15 @@ vercel.json     cache and security headers
 assets/
   logo.webp     the full circular badge — footer and social previews
   mark.webp     the glyph alone — nav and favicon, legible at 16-36px
+  mascot.webp   ringless mascot — faded hero backdrop, upper right
 ```
+
+The hero backdrop is a `::after` on `.hero` rather than an `<img>`, so it stays
+decorative and out of the accessibility tree. It is masked to feather leftward
+across the headline and sits at `z-index: -1` inside an `isolation: isolate`
+context, which keeps it above the hero's gradient but behind the copy. The hero
+card is deliberately translucent with a backdrop blur so the mascot reads
+through it instead of being clipped into a hard rectangle.
 
 ## Run it locally
 

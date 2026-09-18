@@ -178,10 +178,45 @@ a { color: inherit; }
 /* ───────────────────────── hero ───────────────────────── */
 
 .hero {
+  position: relative;
+  /* Keeps the mascot's negative z-index inside the hero, so it sits above the
+     hero's own gradient but behind the copy. */
+  isolation: isolate;
   padding-block: clamp(48px, 8vw, 104px) clamp(40px, 6vw, 72px);
   background:
     radial-gradient(900px 480px at 78% -8%, var(--accent-glow), transparent 68%),
     var(--bg);
+}
+
+/* The mascot, faded into the upper right and running behind the tail of the
+   headline. Its source already sits on black, so it blends into the page
+   without a bottom mask; only the left edge needs feathering so it never
+   competes with the words it passes behind. */
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -16%;
+  right: -8%;
+  width: min(1020px, 84%);
+  aspect-ratio: 1;
+  background: url("assets/mascot.webp") top right / contain no-repeat;
+  opacity: .45;
+  pointer-events: none;
+  /* Feathers out across the headline so it passes behind the last words
+     rather than stopping at the column edge. */
+  -webkit-mask-image: linear-gradient(to left, #000 20%, rgba(0, 0, 0, .45) 52%, rgba(0, 0, 0, .18) 74%, transparent 97%);
+  mask-image: linear-gradient(to left, #000 20%, rgba(0, 0, 0, .45) 52%, rgba(0, 0, 0, .18) 74%, transparent 97%);
+}
+
+@media (max-width: 940px) {
+  /* Stacked layout: keep it as a wash behind the headline, not a picture. */
+  .hero::after {
+    width: 86%;
+    top: -2%;
+    right: -14%;
+    opacity: .2;
+  }
 }
 
 .hero-grid {
@@ -226,7 +261,11 @@ a { color: inherit; }
 /* hero card */
 
 .hero-card {
-  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  /* Translucent so the mascot behind it stays legible rather than being
+     clipped into a hard rectangle. */
+  background: linear-gradient(180deg, rgba(13, 20, 27, .72), rgba(10, 16, 22, .78));
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   padding: 22px;
