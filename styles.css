@@ -201,12 +201,12 @@ a { color: inherit; }
   width: min(1020px, 84%);
   aspect-ratio: 1;
   background: url("assets/mascot.webp") top right / contain no-repeat;
-  opacity: .45;
+  opacity: .58;
   pointer-events: none;
   /* Feathers out across the headline so it passes behind the last words
      rather than stopping at the column edge. */
-  -webkit-mask-image: linear-gradient(to left, #000 20%, rgba(0, 0, 0, .45) 52%, rgba(0, 0, 0, .18) 74%, transparent 97%);
-  mask-image: linear-gradient(to left, #000 20%, rgba(0, 0, 0, .45) 52%, rgba(0, 0, 0, .18) 74%, transparent 97%);
+  -webkit-mask-image: linear-gradient(to left, #000 26%, rgba(0, 0, 0, .55) 56%, rgba(0, 0, 0, .24) 78%, transparent 98%);
+  mask-image: linear-gradient(to left, #000 26%, rgba(0, 0, 0, .55) 56%, rgba(0, 0, 0, .24) 78%, transparent 98%);
 }
 
 @media (max-width: 940px) {
@@ -215,7 +215,7 @@ a { color: inherit; }
     width: 86%;
     top: -2%;
     right: -14%;
-    opacity: .2;
+    opacity: .28;
   }
 }
 
