@@ -14,12 +14,19 @@ assets/
   mascot.webp   ringless mascot — faded hero backdrop, upper right
 ```
 
-The hero backdrop is a `::after` on `.hero` rather than an `<img>`, so it stays
-decorative and out of the accessibility tree. It is masked to feather leftward
-across the headline and sits at `z-index: -1` inside an `isolation: isolate`
-context, which keeps it above the hero's gradient but behind the copy. The hero
-card is deliberately translucent with a backdrop blur so the mascot reads
-through it instead of being clipped into a hard rectangle.
+The hero backdrop is a `::after` on **`.hero-grid`**, not on `.hero`, and not an
+`<img>` — so it stays decorative and out of the accessibility tree. Anchoring it
+to the grid matters: the content column is capped at 1180px and centred, so a
+viewport-anchored mascot drifts away from the headline as the screen widens. It
+missed the text entirely at 1920px and sat 416px clear of it at 2560px. Against
+the grid, the overlap is a constant 356px from 1440px upward.
+
+Two masks are intersected — one feathering leftward across the headline, one
+fading downward so the mascot dissolves before the stats strip it would
+otherwise wash out. `.hero` uses `overflow: clip` so the bleed can never widen
+the document; without it `scrollWidth` exceeded `innerWidth` at every desktop
+size. The hero card is deliberately translucent with a backdrop blur so the
+mascot reads through it instead of being clipped into a hard rectangle.
 
 ## Run it locally
 
