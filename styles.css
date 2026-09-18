@@ -203,12 +203,16 @@ a { color: inherit; }
   /* Negative z-index inside this stacking context: above the hero's gradient,
      behind the copy. */
   z-index: -1;
-  top: -16%;
-  right: -8%;
-  width: min(1020px, 84%);
+  /* Sized to sit in the gap between the headline and the basket card rather
+     than running under it. The card's left edge is at ~59.6% of the grid, so
+     a 42% right offset clears it with room to spare; the 32% width still puts
+     the left edge behind the tail of the headline. */
+  top: -14%;
+  right: 42%;
+  width: min(430px, 32%);
   aspect-ratio: 1;
   background: url("assets/mascot.webp") top right / contain no-repeat;
-  opacity: .58;
+  opacity: .66;
   pointer-events: none;
   /* Two masks, intersected. The horizontal one feathers across the headline so
      the mascot passes behind the last words rather than stopping at the column
