@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>STONK SNIPER — Hold one. Snipe the newest 25.</title>
+<meta name="description" content="Stonk Sniper buys the 25 newest StonkFun launches and airdrops them to holders, three times a day at times nobody knows in advance." />
+<link rel="icon" href="assets/mark.webp" />
+<meta property="og:title" content="STONK SNIPER — Hold one. Snipe the newest 25." />
+<meta property="og:description" content="The 25 newest StonkFun launches, sniped three times a day at random times, airdropped to holders." />
+<meta property="og:image" content="https://stonksniper.com/assets/logo.webp" />
+<meta property="og:url" content="https://stonksniper.com/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="STONK SNIPER — Hold one. Snipe the newest 25." />
+<meta name="twitter:description" content="The 25 newest StonkFun launches, sniped three times a day at random times, airdropped to holders." />
+<meta name="twitter:image" content="https://stonksniper.com/assets/logo.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <img src="assets/mark.webp" alt="" width="36" height="36" />
+      <span class="brand-text"><b>STONK</b> <span class="accent">SNIPER</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#feed">The 25</a>
+      <a href="#rounds">Rounds</a>
+      <a href="#randomness">Randomness</a>
+      <a href="#calculator">Calculator</a>
+    </nav>
+    <a class="btn btn-ghost nav-cta" href="#contract">Contract <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ───────────────────────── hero ───────────────────────── -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>
+          Hold one.<br />
+          Snipe the<br />
+          <span class="accent">newest 25.</span>
+        </h1>
+        <p class="lede">
+          Stonk Sniper buys the 25 newest launches on StonkFun and airdrops them to
+          holders. Three rounds a day, at times nobody knows in advance.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#feed">See the current 25 <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-outline" href="#calculator">Estimate your round</a>
+        </div>
+        <p class="contract" id="contract">
+          <span class="mono" id="contract-addr">Not yet launched</span>
+          <button class="copy" type="button" data-copy="" disabled>Copy contract</button>
+        </p>
+      </div>
+
+      <aside class="hero-card" aria-labelledby="hero-card-title">
+        <div class="hero-card-head">
+          <h2 id="hero-card-title">This round&rsquo;s basket</h2>
+          <span class="pill pill-muted">Pre&#8209;launch</span>
+        </div>
+        <div class="coin-grid" aria-hidden="true">
+          <span class="coin"></span><span class="coin"></span><span class="coin"></span>
+          <span class="coin"></span><span class="coin"></span><span class="coin"></span>
+          <span class="coin"></span><span class="coin"></span><span class="coin"></span>
+          <span class="coin"></span><span class="coin"></span><span class="coin"></span>
+          <span class="coin"></span><span class="coin"></span><span class="coin"></span>
+          <span class="coin"></span><span class="coin"></span><span class="coin"></span>
+          <span class="coin"></span><span class="coin"></span><span class="coin"></span>
+          <span class="coin"></span><span class="coin"></span><span class="coin"></span>
+          <span class="coin"></span>
+        </div>
+        <p class="hero-card-foot">
+          Twenty&#8209;five coins.<br />
+          <span class="muted">Bought at a time you can&rsquo;t predict.</span>
+        </p>
+      </aside>
+    </div>
+
+    <div class="wrap">
+      <dl class="stats">
+        <div><dt>$SNIPER price</dt><dd class="empty">—</dd></div>
+        <div><dt>Market cap</dt><dd class="empty">—</dd></div>
+        <div><dt>24h volume</dt><dd class="empty">—</dd></div>
+        <div><dt>On-chain supply</dt><dd class="empty">—</dd></div>
+      </dl>
+      <p class="stats-note">
+        Live figures appear here once the token is launched and the engine&rsquo;s first
+        round settles. Nothing on this page is simulated.
+      </p>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── the feed ───────────────────────── -->
+  <section class="section" id="feed">
+    <div class="wrap">
+      <header class="section-head">
+        <h2>Buy the bottom.</h2>
+        <p>
+          Every round walks StonkFun&rsquo;s newest feed and takes the first 25 launches
+          that clear the filter. The ones that don&rsquo;t clear it are listed too, with the
+          reason &mdash; that log is the most honest page on this site.
+        </p>
+      </header>
+
+      <div class="table-card">
+        <table class="feed-table">
+          <caption class="sr-only">The current round&rsquo;s candidates and their verdicts</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="c-rank">#</th>
+              <th scope="col">Coin</th>
+              <th scope="col">Age</th>
+              <th scope="col">Quote</th>
+              <th scope="col" class="num">Curve liquidity</th>
+              <th scope="col">Verdict</th>
+            </tr>
+          </thead>
+          <tbody id="feed-body">
+            <tr class="empty-row">
+              <td colspan="6">
+                <strong>No round has run yet.</strong>
+                <span>The first basket and its rejection log will appear here.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ul class="gate-list" aria-label="Filter gates">
+        <li><span class="gate-k">Minimum age</span><span class="gate-v">10 min</span></li>
+        <li><span class="gate-k">Minimum curve liquidity</span><span class="gate-v">5 SOL</span></li>
+        <li><span class="gate-k">Minimum distinct holders</span><span class="gate-v">15</span></li>
+        <li><span class="gate-k">Max price impact of our buy</span><span class="gate-v">15%</span></li>
+        <li><span class="gate-k">Slots per creator per round</span><span class="gate-v">1</span></li>
+        <li><span class="gate-k">Re-snipe cooldown</span><span class="gate-v">1 round</span></li>
+      </ul>
+      <p class="muted small">
+        Every gate is configuration, and the exact values a round ran under are published
+        with that round. A mint that isn&rsquo;t a StonkFun launch is never a candidate:
+        provenance is checked on-chain, not from an API.
+      </p>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── how it works ───────────────────────── -->
+  <section class="band" id="how">
+    <div class="wrap">
+      <h2 class="band-title">From trading fees<br />to holder airdrops.</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-n">01 /</span>
+          <h3>Trading creates revenue.</h3>
+          <p>
+            Stonk Sniper launches on StonkFun in Standard mode. The creator&rsquo;s share of
+            platform trading fees is forwarded to the creator wallet automatically &mdash;
+            there is nothing to claim.
+          </p>
+        </li>
+        <li>
+          <span class="step-n">02 /</span>
+          <h3>The newest feed sets the lineup.</h3>
+          <p>
+            The engine walks StonkFun&rsquo;s newest launches, deeper than one page if it
+            has to, until 25 candidates pass every provenance, mint and economic gate.
+          </p>
+        </li>
+        <li>
+          <span class="step-n">03 /</span>
+          <h3>The engine snipes and sends.</h3>
+          <p>
+            It buys each coin on its bonding curve, holds one round so winners can be
+            harvested, then pushes to holders and publishes a claim root for the rest.
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── rounds ───────────────────────── -->
+  <section class="section" id="rounds">
+    <div class="wrap">
+      <header class="section-head">
+        <h2>Rounds, on record.</h2>
+        <p>
+          Each round publishes its committed hash, its snapshot slot and root, every coin
+          it bought, the payout threshold it landed on, and every transaction signature.
+        </p>
+      </header>
+
+      <div class="card-grid">
+        <article class="card card-accent">
+          <h3>Coins airdropped</h3>
+          <p class="stat-xl empty">—</p>
+          <p class="card-note">
+            Across all settled rounds. Counted from finalized transfers only; failed
+            transactions are excluded.
+          </p>
+        </article>
+        <article class="card">
+          <h3>$SNIPER burned</h3>
+          <p class="stat-xl empty">—</p>
+          <p class="card-note">
+            Bought back and burned from three sources: the round&rsquo;s base slice, winner
+            harvest, and expired unclaimed dust.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Basket spending</h3>
+          <p class="stat-xl empty">—</p>
+          <p class="card-note">
+            SOL spent acquiring coins. This is acquisition cost, not the current value of
+            what holders received.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Rounds settled</h3>
+          <p class="stat-xl empty">—</p>
+          <p class="card-note">
+            Three per day. A degraded or skipped round is published too, with its reason.
+          </p>
+        </article>
+      </div>
+
+      <div class="split">
+        <div class="split-copy">
+          <h3>Where each round&rsquo;s revenue goes</h3>
+          <p class="muted">
+            Rent is a cap, not an allocation. Whatever the airdrop doesn&rsquo;t spend on
+            account rent rolls back into the basket for that same round.
+          </p>
+        </div>
+        <ul class="split-bars">
+          <li><span class="bar-k">Basket</span><span class="bar"><i class="w-basket"></i></span><span class="bar-v">80%</span></li>
+          <li><span class="bar-k">Rent cap</span><span class="bar"><i class="w-rent"></i></span><span class="bar-v">15%</span></li>
+          <li><span class="bar-k">Buyback &amp; burn</span><span class="bar"><i class="w-burn"></i></span><span class="bar-v">5%</span></li>
+        </ul>
+      </div>
+
+      <div class="table-card">
+        <table class="rounds-table">
+          <caption class="sr-only">Settled rounds</caption>
+          <thead>
+            <tr>
+              <th scope="col">Round</th>
+              <th scope="col">Fired (UTC)</th>
+              <th scope="col" class="num">Filled</th>
+              <th scope="col" class="num">Pushed / claiming</th>
+              <th scope="col">Status</th>
+              <th scope="col">Receipts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="empty-row">
+              <td colspan="6">
+                <strong>No settled rounds yet.</strong>
+                <span>Every round will land here with paired buy, transfer and burn signatures.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── randomness ───────────────────────── -->
+  <section class="section section-alt" id="randomness">
+    <div class="wrap">
+      <header class="section-head">
+        <h2>Three rounds. Unpredictable timing.</h2>
+        <p>
+          One round per eight-hour window, at least ninety minutes apart, drawn at
+          midnight UTC. The times stay secret until the day&rsquo;s last round, so there is
+          no window in which to buy in before a snapshot and sell after it.
+        </p>
+      </header>
+
+      <div class="reveal-grid">
+        <article class="card">
+          <h3>Today&rsquo;s commitment</h3>
+          <p class="mono hash empty">—</p>
+          <p class="card-note">
+            Posted on-chain at 00:00 UTC as <span class="mono">sha256(times&nbsp;‖&nbsp;salt)</span>
+            before any round fires.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Today&rsquo;s reveal</h3>
+          <p class="mono hash empty">—</p>
+          <p class="card-note">
+            Published after the third round: the three times and the salt, so anyone can
+            recompute the hash above.
+          </p>
+        </article>
+      </div>
+
+      <details class="disclosure">
+        <summary>How to verify a reveal yourself</summary>
+        <div class="disclosure-body">
+          <p>
+            The preimage is the three execution times as unix seconds, sorted ascending
+            and joined with commas, then a pipe, then the salt as lowercase hex:
+          </p>
+          <pre class="mono code">t1,t2,t3|saltHex</pre>
+          <p>
+            SHA-256 that exact string. It must equal the commitment posted before the day
+            began. A skipped or degraded round is still recorded against the commitment,
+            so a bad round cannot be quietly dropped.
+          </p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── calculator ───────────────────────── -->
+  <section class="section" id="calculator">
+    <div class="wrap calc-grid">
+      <div class="calc-copy">
+        <h2>Your next round.<br />Estimated.</h2>
+        <p class="muted">
+          Payouts are pro-rata by supply share. Enter a balance to see your share of the
+          supply that actually counts &mdash; project wallets are excluded from the
+          snapshot before the denominator is computed.
+        </p>
+        <ul class="formula">
+          <li>Your $SNIPER balance</li>
+          <li class="op">&divide; eligible supply</li>
+          <li class="eq">= your share of the round</li>
+        </ul>
+        <p class="small muted">
+          This is a supply-share estimate, not a claimable amount. What you actually
+          receive depends on the snapshot taken at the moment the round fires, and on how
+          much of the basket each coin&rsquo;s buy actually filled.
+        </p>
+      </div>
+
+      <form class="calc-form" id="calc" novalidate>
+        <div class="field">
+          <label for="balance">Your $SNIPER balance</label>
+          <input id="balance" name="balance" type="text" inputmode="decimal"
+                 placeholder="e.g. 1000000" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="supply">Eligible supply</label>
+          <input id="supply" name="supply" type="text" inputmode="decimal"
+                 value="1000000000" autocomplete="off" />
+          <p class="hint">
+            Defaults to total supply. The engine uses supply after excluding project
+            wallets, so your real share will be slightly higher.
+          </p>
+        </div>
+
+        <div class="result" role="status" aria-live="polite">
+          <span class="result-k">Your share of the round</span>
+          <span class="result-v" id="share">—</span>
+        </div>
+
+        <div class="result result-sub">
+          <span class="result-k">Delivery</span>
+          <span class="result-v result-v-sm" id="delivery">Enter a balance</span>
+        </div>
+
+        <p class="hint">
+          Nothing is sent anywhere. This runs entirely in your browser &mdash; no wallet
+          connection, no signature, no address stored.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── burn ───────────────────────── -->
+  <section class="section section-alt" id="burn">
+    <div class="wrap">
+      <header class="section-head">
+        <h2>Buy back. Burn. Repeat.</h2>
+        <p>
+          Burns are real buybacks paid for in SOL, from three separate sources. Each one
+          is recorded with paired buy and burn signatures.
+        </p>
+      </header>
+
+      <div class="card-grid burn-grid">
+        <article class="card">
+          <h3>Base slice</h3>
+          <p class="stat-lg">5%</p>
+          <p class="card-note">Of every round&rsquo;s revenue, spent buying $SNIPER to burn.</p>
+        </article>
+        <article class="card">
+          <h3>Winner harvest</h3>
+          <p class="stat-lg">50%</p>
+          <p class="card-note">
+            Of any sniped coin that graduates during its hold window &mdash; sold, and the
+            proceeds burned.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Expired dust</h3>
+          <p class="stat-lg">100%</p>
+          <p class="card-note">
+            Of unclaimed positions after they expire &mdash; swept, sold, and burned.
+            Activates with the claim distributor.
+          </p>
+        </article>
+      </div>
+
+      <div class="table-card">
+        <table class="rounds-table">
+          <caption class="sr-only">Buyback and burn ledger</caption>
+          <thead>
+            <tr>
+              <th scope="col">Round</th>
+              <th scope="col">Burned (UTC)</th>
+              <th scope="col">Source</th>
+              <th scope="col" class="num">$SNIPER burned</th>
+              <th scope="col" class="num">Cost</th>
+              <th scope="col">Receipts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="empty-row">
+              <td colspan="6">
+                <strong>No burns yet.</strong>
+                <span>The first buyback-and-burn pair will appear here.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── honest note ───────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <aside class="note">
+        <h2>What you are actually buying</h2>
+        <p>
+          Stonk Sniper buys the newest launches on a launchpad. That is the unfiltered
+          intake population, where the most common outcome for any single coin is zero.
+          The basket will often look generous in token count and thin in dollars. The
+          filters, the winner harvest and the burn exist to push against that, and none of
+          them change the base rate.
+        </p>
+        <p>
+          This is a speculative memecoin, not an investment product. Nothing here is
+          financial advice.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.webp" alt="" width="56" height="56" />
+      <p><b>STONK SNIPER</b><br /><span class="muted">$SNIPER</span></p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#feed">The 25</a>
+      <a href="#rounds">Rounds</a>
+      <a href="#randomness">Randomness</a>
+      <a href="#burn">Burns</a>
+      <a href="#calculator">Calculator</a>
+    </nav>
+    <p class="footer-fine muted small">
+      Not affiliated with StonkFun. Figures publish only once the engine settles a round;
+      empty states on this page mean exactly that.
+    </p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
