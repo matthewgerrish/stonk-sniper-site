@@ -10,9 +10,16 @@ app.js          share calculator, contract copy button
 vercel.json     cache and security headers
 assets/
   logo.webp     the full circular badge — footer and social previews
-  mark.webp     the glyph alone — nav and favicon, legible at 16-36px
+  mark.webp     the glyph on its dark square — favicon only
+  glyph.webp    the glyph with alpha — sits inside the nav's scope reticle
   mascot.webp   ringless mascot — faded hero backdrop, upper right
 ```
+
+The nav mark is the glyph inside a sniper reticle. The reticle is inline SVG,
+not part of the image: it stays crisp at any size, takes its colour from
+`--accent`, and keeps the raster to the glyph alone. The favicon deliberately
+uses `mark.webp` instead — the version with its own dark square — because a
+transparent favicon disappears against light browser chrome.
 
 The hero backdrop is a `::after` on **`.hero-grid`**, not on `.hero`, and not an
 `<img>` — so it stays decorative and out of the accessibility tree. Anchoring it

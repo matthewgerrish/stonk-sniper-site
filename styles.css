@@ -122,9 +122,39 @@ a { color: inherit; }
   display: flex; align-items: center; gap: 10px;
   text-decoration: none; flex: none;
 }
-/* The nav uses the square glyph mark, not the circular badge, so it gets a
-   soft square radius. The footer keeps 50% because that IS the badge. */
-.brand img { border-radius: 9px; }
+/* The nav mark is the glyph sitting inside a sniper reticle. The reticle is
+   inline SVG rather than part of the image: it stays crisp at any size, picks
+   up the accent colour from the theme, and keeps the raster to just the glyph.
+   The footer keeps the full circular badge instead. */
+.scope {
+  position: relative;
+  display: grid; place-items: center;
+  width: 38px; height: 38px;
+  flex: none;
+}
+.scope img { grid-area: 1 / 1; }
+.scope-ring {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  overflow: visible;
+}
+.scope .ring {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.4;
+  opacity: .8;
+  transition: opacity .18s ease;
+}
+.scope .ring-inner { stroke-width: .9; opacity: .32; }
+.scope .tick {
+  stroke: var(--accent);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  opacity: .9;
+  transition: opacity .18s ease;
+}
+.brand:hover .scope .ring,
+.brand:hover .scope .tick { opacity: 1; }
 .brand-text {
   font-family: var(--font-display);
   /* Orbitron runs large for its point size, so this is smaller than the Inter
